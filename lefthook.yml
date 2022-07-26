@@ -1,0 +1,14 @@
+ pre-push:
+   commands:
+     a:
+       root: packages/a/
+       files: git diff --name-only HEAD @{push}
+       run: npm test
+     b:
+       root: packages/b/
+       files: git diff --name-only HEAD @{push}
+       run: npm test
+     c:
+       root: packages/c/
+       files: git diff --name-only HEAD @{push}
+       run: npm test
